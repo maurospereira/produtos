@@ -1,8 +1,8 @@
-package com.best2bee.produtos.api.config;
+package com.best2bee.products.config;
 
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Configuration("app")
+@ConfigurationProperties("app")
 public class AppConfig {
 
 	private String outputKafkaTopic;
@@ -14,4 +14,5 @@ public class AppConfig {
 	public void setOutputKafkaTopic(String outputKafkaTopic) {
 		this.outputKafkaTopic = outputKafkaTopic;
 	}
+	
 }
