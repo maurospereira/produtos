@@ -1,5 +1,4 @@
-package com.best2bee.produtos.api.config;
-
+package com.best2bee.products.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
