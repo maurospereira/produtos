@@ -1,13 +1,19 @@
 package com.best2bee.products.service;
 
 import java.time.Instant;
+
 import java.util.List;
+
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.best2bee.products.exceptions.DatabaseException;
@@ -53,4 +59,9 @@ public class SaleService {
 
 	}
 
+	public Page<Sale> paginatedList (String searchTerm, int page, int size) {
+		PageRequest pageRequest = PageRequest.of(page, size, Sort.Direction.ASC, "client.name");
+		
+		return repository.paginatedList(searchTerm.toLowerCase(), pageRequest);
+	}
 }
