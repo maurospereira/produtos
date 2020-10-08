@@ -1,10 +1,10 @@
-package com.best2bee.produtos.api;
+package com.best2bee.produtos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiProdutosApplicationTests {
+class ProdutosApplicationTests {
 
 	@Test
 	void contextLoads() {

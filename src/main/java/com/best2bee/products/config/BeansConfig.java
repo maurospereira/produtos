@@ -1,4 +1,4 @@
-package com.best2bee.produtos.api.config;
+package com.best2bee.products.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,10 +12,10 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-import com.best2bee.produtos.api.model.Produto;
+import com.best2bee.products.model.Product;
 
 public class BeansConfig {
-
+	
 	@Value("${spring.kafka.bootstrap-servers}")
 	private String bootstrapServers;
 	
@@ -29,12 +29,13 @@ public class BeansConfig {
 	}
 	
 	@Bean
-	public ProducerFactory<String, Produto> producerFactory(){
+	public ProducerFactory<String, Product> producerFactory(){
 		return new DefaultKafkaProducerFactory<>(producerConfigs());
 	}
 	
 	@Bean
-	public KafkaTemplate<String, Produto> kafkaTemplate(){
+	public KafkaTemplate<String, Product> kafkaTemplate(){
 		return new KafkaTemplate<>(producerFactory());
 	}
+
 }
