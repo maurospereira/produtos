@@ -41,19 +41,17 @@ public class TestConfig implements CommandLineRunner {
 		Address a2 = new Address(null, "Estrada da saldade", "Centro", 12, "23754-231", "Petropolis", "RJ", "");
 
 		Client c1 = new Client(null, "Paulo dos Santos", "16887338092", a1);
-		Client c2 = new Client(null, "Maria Luiza dos Fontes", "10394678060", a2);
+
+		Client c2 = new Client(null, "Maria Luiza Fontes", "10394678060", a2);
 
 		Product p1 = new Product(null,
 				"Smartphone Samsung Galaxy S10e 128GB Dual Chip Android 9.0 Tela 5,8\" Octa-Core 4G Câmera 12MP + 16MP - Preto",
 				Instant.now(), 2.06910, 10F);
 
 		Product p2 = new Product(null, "iPhone 11 Pro Max 512GB Cinza Espacial iOS 4G + Wi-Fi Câmera 12MP",
-				Instant.now(), 8.499, 10F);
+				Instant.now(), 8.499, 10F);		
 		
-		
-		
-		
-		
+
 		Sale s1 = new Sale(null,Instant.now(), c1);
 		
 		SaleItem si1 = new SaleItem(null,p1, s1, 20F, 2.000 );
@@ -66,8 +64,6 @@ public class TestConfig implements CommandLineRunner {
 		saleRepository.save(s1);
 		
 		saleItemRepository.saveAll(Arrays.asList(si1,si2));		
-
-	
 
 	}
 
